@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hafez WhatsApp</string>
+    <string name="open_whatsapp">Open WhatsApp Reels</string>
+    <string name="see_status">See Your Status and Download</string>
+    <string name="download">Download</string>
+    <string name="favorite">Favorite</string>
+    <string name="images">Images</string>
+    <string name="videos">Videos</string>
+    <string name="favorites">Favorites</string>
+    <string name="open_whatsapp_error">WhatsApp is not installed</string>
+    <string name="saved_success">Saved successfully</string>
+    <string name="saved_failed">Download failed</string>
+    <string name="added_favorite">Added to favorites</string>
+</resources>

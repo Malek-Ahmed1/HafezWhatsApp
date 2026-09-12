@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="primary">#25D366</color>
+    <color name="primary_dark">#128C7E</color>
+    <color name="splash_bg">#075E54</color>
+    <color name="white">#FFFFFF</color>
+    <string name="added_favorite">Added to favorites</string>
+    <string name="app_name">Hafez WhatsApp</string>
+    <string name="download">Download</string>
+    <string name="favorite">Favorite</string>
+    <string name="favorites">Favorites</string>
+    <string name="images">Images</string>
+    <string name="open_whatsapp">Open WhatsApp Reels</string>
+    <string name="open_whatsapp_error">WhatsApp is not installed</string>
+    <string name="saved_failed">Download failed</string>
+    <string name="saved_success">Saved successfully</string>
+    <string name="see_status">See Your Status and Download</string>
+    <string name="videos">Videos</string>
+    <style name="Theme.Material3.DayNight" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/primary</item>
+    </style>
+</resources>

@@ -1,0 +1,34 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color primary
+color primary_dark
+color splash_bg
+color white
+id btnDownload
+id btnFavorite
+id btnOpenWhatsApp
+id btnSeeStatus
+id imgThumb
+id recyclerMedia
+id splashImage
+id tabLayout
+layout activity_main
+layout activity_splash
+layout activity_status_media
+layout item_media
+mipmap ic_launcher
+mipmap ic_launcher_round
+string added_favorite
+string app_name
+string download
+string favorite
+string favorites
+string images
+string open_whatsapp
+string open_whatsapp_error
+string saved_failed
+string saved_success
+string see_status
+string videos
+style Theme.Material3.DayNight
