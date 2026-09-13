@@ -1,0 +1,175 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.hafez.whatsapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+11-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:5:5-79
+11-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:5:22-77
+12    <uses-permission
+12-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:6:5-7:37
+13        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+13-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:6:22-78
+14        android:maxSdkVersion="28" />
+14-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:7:9-35
+15    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+15-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:8:5-9:39
+15-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:8:22-79
+16    <uses-permission android:name="android.permission.INTERNET" />
+16-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:10:5-66
+16-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:10:22-64
+17    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+17-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:11:5-75
+17-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:11:22-73
+18    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+18-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:12:5-74
+18-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:12:22-72
+19
+20    <queries>
+20-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:14:5-17:15
+21        <package android:name="com.whatsapp" />
+21-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:15:9-47
+21-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:15:18-45
+22        <package android:name="com.whatsapp.w4b" />
+22-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:16:9-51
+22-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:16:18-49
+23    </queries>
+24
+25    <permission
+25-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+26        android:name="com.hafez.whatsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+26-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+27        android:protectionLevel="signature" />
+27-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+28
+29    <uses-permission android:name="com.hafez.whatsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+29-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+29-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+30
+31    <application
+31-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:19:5-37:19
+32        android:allowBackup="true"
+32-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:20:9-35
+33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+33-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+34        android:extractNativeLibs="false"
+35        android:icon="@mipmap/ic_launcher"
+35-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:21:9-43
+36        android:label="Hafez WhatsApp"
+36-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:22:9-39
+37        android:requestLegacyExternalStorage="true"
+37-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:23:9-52
+38        android:theme="@style/Theme.Material3.DayNight" >
+38-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:24:9-56
+39        <activity
+39-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:26:9-33:20
+40            android:name="com.hafez.whatsapp.SplashActivity"
+40-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:27:13-43
+41            android:exported="true" >
+41-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:28:13-36
+42            <intent-filter>
+42-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:29:13-32:29
+43                <action android:name="android.intent.action.MAIN" />
+43-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:30:17-68
+43-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:30:25-66
+44
+45                <category android:name="android.intent.category.LAUNCHER" />
+45-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:31:17-76
+45-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:31:27-74
+46            </intent-filter>
+47        </activity>
+48        <activity
+48-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:35:9-74
+49            android:name="com.hafez.whatsapp.MainActivity"
+49-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:35:19-47
+50            android:exported="false" />
+50-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:35:48-72
+51        <activity
+51-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:36:9-81
+52            android:name="com.hafez.whatsapp.StatusMediaActivity"
+52-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:36:19-54
+53            android:exported="false" />
+53-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:36:55-79
+54
+55        <provider
+55-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-4/839a791d20cc740a69f5360f35da2876/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+56            android:name="androidx.startup.InitializationProvider"
+56-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-4/839a791d20cc740a69f5360f35da2876/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+57            android:authorities="com.hafez.whatsapp.androidx-startup"
+57-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-4/839a791d20cc740a69f5360f35da2876/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+58            android:exported="false" >
+58-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-4/839a791d20cc740a69f5360f35da2876/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+59            <meta-data
+59-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-4/839a791d20cc740a69f5360f35da2876/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+60                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+60-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-4/839a791d20cc740a69f5360f35da2876/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+61                android:value="androidx.startup" />
+61-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-4/839a791d20cc740a69f5360f35da2876/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+62            <meta-data
+62-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/codespace/.gradle/caches/transforms-4/327fed9aefbf694a9e0ed8aa746de5df/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+63                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+63-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/codespace/.gradle/caches/transforms-4/327fed9aefbf694a9e0ed8aa746de5df/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+64                android:value="androidx.startup" />
+64-->[androidx.lifecycle:lifecycle-process:2.7.0] /home/codespace/.gradle/caches/transforms-4/327fed9aefbf694a9e0ed8aa746de5df/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+65            <meta-data
+65-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+66                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+66-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+67                android:value="androidx.startup" />
+67-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+68        </provider>
+69
+70        <service
+70-->[androidx.room:room-runtime:2.6.1] /home/codespace/.gradle/caches/transforms-4/626ea3d693ed3c73118e00bf2c36202c/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+71            android:name="androidx.room.MultiInstanceInvalidationService"
+71-->[androidx.room:room-runtime:2.6.1] /home/codespace/.gradle/caches/transforms-4/626ea3d693ed3c73118e00bf2c36202c/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+72            android:directBootAware="true"
+72-->[androidx.room:room-runtime:2.6.1] /home/codespace/.gradle/caches/transforms-4/626ea3d693ed3c73118e00bf2c36202c/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+73            android:exported="false" />
+73-->[androidx.room:room-runtime:2.6.1] /home/codespace/.gradle/caches/transforms-4/626ea3d693ed3c73118e00bf2c36202c/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+74
+75        <receiver
+75-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+76            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+76-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+77            android:directBootAware="false"
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+78            android:enabled="true"
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+79            android:exported="true"
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+80            android:permission="android.permission.DUMP" >
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+81            <intent-filter>
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+82                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+83            </intent-filter>
+84            <intent-filter>
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+85                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+86            </intent-filter>
+87            <intent-filter>
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+88                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+88-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+89            </intent-filter>
+90            <intent-filter>
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+91                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+91-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-4/91473b3f54c6a4f66e9fd6ffbbfba6d2/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+92            </intent-filter>
+93        </receiver>
+94    </application>
+95
+96</manifest>

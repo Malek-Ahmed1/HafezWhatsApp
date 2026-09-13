@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.hafez.whatsapp-release-39:/layout_activity_main.xml.flat",
+        "source": "com.hafez.whatsapp-main-40:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.hafez.whatsapp-release-39:/layout_activity_status_media.xml.flat",
+        "source": "com.hafez.whatsapp-main-40:/layout/activity_status_media.xml"
+    },
+    {
+        "merged": "com.hafez.whatsapp-release-39:/layout_activity_splash.xml.flat",
+        "source": "com.hafez.whatsapp-main-40:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.hafez.whatsapp-release-39:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.hafez.whatsapp-main-40:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.hafez.whatsapp-release-39:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.hafez.whatsapp-main-40:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.hafez.whatsapp-release-39:/layout_item_media.xml.flat",
+        "source": "com.hafez.whatsapp-main-40:/layout/item_media.xml"
+    }
+]
