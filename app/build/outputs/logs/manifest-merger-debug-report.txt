@@ -1,9 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:2:1-38:12
-INJECTED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:2:1-38:12
-INJECTED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:2:1-38:12
-INJECTED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:2:1-38:12
+ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:2:1-43:12
+INJECTED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:2:1-43:12
+INJECTED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:2:1-43:12
+INJECTED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:2:1-43:12
+MERGED from [androidx.databinding:viewbinding:8.5.0] /home/codespace/.gradle/caches/transforms-4/7342fa9c1c9ece3ee69d93756effda06/transformed/viewbinding-8.5.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.11.0] /home/codespace/.gradle/caches/transforms-4/9c9f7f2f5efc65ee96d1ac30544ae3e3/transformed/material-1.11.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/codespace/.gradle/caches/transforms-4/1b12cd9bb222bda5324619013a1a1366/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/codespace/.gradle/caches/transforms-4/2a8c7679072bbc22f125d53400e77254/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
@@ -42,6 +43,7 @@ MERGED from [androidx.room:room-ktx:2.6.1] /home/codespace/.gradle/caches/transf
 MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /home/codespace/.gradle/caches/transforms-4/3cc8508adf1fe52aa1e6f1ec9906e25e/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite:2.4.0] /home/codespace/.gradle/caches/transforms-4/92ff7acc96c364fc18342bea230ea252/transformed/sqlite-2.4.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/codespace/.gradle/caches/transforms-4/7595f7d292b07178125b3d00b288228c/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.1] /home/codespace/.gradle/caches/transforms-4/4146da1f2ccddd44c162737012b25698/transformed/documentfile-1.0.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/codespace/.gradle/caches/transforms-4/d65f2511cf6b149a32fb92e81802c917/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cardview:cardview:1.0.0] /home/codespace/.gradle/caches/transforms-4/9c8dab985631d4a52f84fe6b42666fb3/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/codespace/.gradle/caches/transforms-4/ad0f84cf71e65fbe49142ef5c0f89776/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
@@ -52,7 +54,6 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/codespace/.gradle/cac
 MERGED from [androidx.tracing:tracing:1.0.0] /home/codespace/.gradle/caches/transforms-4/0c128a8f864a4f8d2017ce77f8161cfb/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/codespace/.gradle/caches/transforms-4/1db366737265782d77e792c5cd662aff/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/codespace/.gradle/caches/transforms-4/646652c8f0716d503f8a8f736307f2ac/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.documentfile:documentfile:1.0.0] /home/codespace/.gradle/caches/transforms-4/a876640fd5ac4dee20cb6550ae5246df/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/codespace/.gradle/caches/transforms-4/1b5a74cb866f3125c8bc1dbf2783fcf2/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /home/codespace/.gradle/caches/transforms-4/f13e677299b230b66ed6243b0c2ca389/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 	package
@@ -66,46 +67,48 @@ MERGED from [androidx.print:print:1.0.0] /home/codespace/.gradle/caches/transfor
 	xmlns:android
 		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:5:5-79
+ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:5:5-6:37
+	android:maxSdkVersion
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:6:9-35
 	android:name
 		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:5:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:6:5-7:37
+ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:7:5-8:37
 	android:maxSdkVersion
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:7:9-35
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:8:9-35
 	android:name
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:6:22-78
-uses-permission#android.permission.MANAGE_EXTERNAL_STORAGE
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:8:5-9:39
-	tools:ignore
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:9:9-37
-	android:name
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:8:22-79
-uses-permission#android.permission.INTERNET
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:10:5-66
-	android:name
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:10:22-64
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:7:22-78
 uses-permission#android.permission.READ_MEDIA_IMAGES
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:11:5-75
+ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:9:5-75
 	android:name
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:11:22-73
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:9:22-73
 uses-permission#android.permission.READ_MEDIA_VIDEO
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:12:5-74
+ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:10:5-74
 	android:name
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:12:22-72
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:10:22-72
+uses-permission#android.permission.INTERNET
+ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:11:5-66
+	android:name
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:11:22-64
+uses-permission#android.permission.MANAGE_EXTERNAL_STORAGE
+ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:12:5-13:39
+	tools:ignore
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:13:9-37
+	android:name
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:12:22-79
 queries
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:14:5-17:15
+ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:15:5-18:15
 package#com.whatsapp
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:15:9-47
+ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:16:9-47
 	android:name
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:15:18-45
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:16:18-45
 package#com.whatsapp.w4b
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:16:9-51
+ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:17:9-51
 	android:name
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:16:18-49
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:17:18-49
 application
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:19:5-37:19
-INJECTED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:19:5-37:19
+ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:20:5-42:19
+INJECTED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:20:5-42:19
 MERGED from [com.google.android.material:material:1.11.0] /home/codespace/.gradle/caches/transforms-4/9c9f7f2f5efc65ee96d1ac30544ae3e3/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] /home/codespace/.gradle/caches/transforms-4/9c9f7f2f5efc65ee96d1ac30544ae3e3/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/codespace/.gradle/caches/transforms-4/1b12cd9bb222bda5324619013a1a1366/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -127,49 +130,53 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/codes
 	android:extractNativeLibs
 		INJECTED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml
 	android:requestLegacyExternalStorage
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:23:9-52
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:25:9-52
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:26:9-35
 	android:label
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:22:9-39
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:23:9-41
+	android:roundIcon
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:24:9-54
+	tools:targetApi
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:28:9-29
 	android:icon
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:21:9-43
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:22:9-43
 	android:allowBackup
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:20:9-35
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:21:9-35
 	android:theme
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:24:9-56
-activity#com.hafez.whatsapp.SplashActivity
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:26:9-33:20
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:27:9-49
+activity#com.kaboas.statusvault.SplashActivity
+ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:30:9-38:20
 	android:exported
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:28:13-36
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:32:13-36
+	android:theme
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:33:13-53
 	android:name
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:27:13-43
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:31:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:29:13-32:29
+ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:34:13-37:29
 action#android.intent.action.MAIN
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:30:17-68
+ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:35:17-68
 	android:name
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:30:25-66
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:35:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:31:17-76
+ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:36:17-76
 	android:name
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:31:27-74
-activity#com.hafez.whatsapp.MainActivity
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:35:9-74
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:36:27-74
+activity#com.kaboas.statusvault.MainActivity
+ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:40:9-74
 	android:exported
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:35:48-72
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:40:48-72
 	android:name
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:35:19-47
-activity#com.hafez.whatsapp.StatusMediaActivity
-ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:36:9-81
-	android:exported
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:36:55-79
-	android:name
-		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:36:19-54
+		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:40:19-47
 uses-sdk
 INJECTED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml
 INJECTED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:8.5.0] /home/codespace/.gradle/caches/transforms-4/7342fa9c1c9ece3ee69d93756effda06/transformed/viewbinding-8.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.databinding:viewbinding:8.5.0] /home/codespace/.gradle/caches/transforms-4/7342fa9c1c9ece3ee69d93756effda06/transformed/viewbinding-8.5.0/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.material:material:1.11.0] /home/codespace/.gradle/caches/transforms-4/9c9f7f2f5efc65ee96d1ac30544ae3e3/transformed/material-1.11.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.11.0] /home/codespace/.gradle/caches/transforms-4/9c9f7f2f5efc65ee96d1ac30544ae3e3/transformed/material-1.11.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/codespace/.gradle/caches/transforms-4/1b12cd9bb222bda5324619013a1a1366/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
@@ -246,6 +253,8 @@ MERGED from [androidx.sqlite:sqlite:2.4.0] /home/codespace/.gradle/caches/transf
 MERGED from [androidx.sqlite:sqlite:2.4.0] /home/codespace/.gradle/caches/transforms-4/92ff7acc96c364fc18342bea230ea252/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/codespace/.gradle/caches/transforms-4/7595f7d292b07178125b3d00b288228c/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/codespace/.gradle/caches/transforms-4/7595f7d292b07178125b3d00b288228c/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.1] /home/codespace/.gradle/caches/transforms-4/4146da1f2ccddd44c162737012b25698/transformed/documentfile-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.1] /home/codespace/.gradle/caches/transforms-4/4146da1f2ccddd44c162737012b25698/transformed/documentfile-1.0.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/codespace/.gradle/caches/transforms-4/d65f2511cf6b149a32fb92e81802c917/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/codespace/.gradle/caches/transforms-4/d65f2511cf6b149a32fb92e81802c917/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] /home/codespace/.gradle/caches/transforms-4/9c8dab985631d4a52f84fe6b42666fb3/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
@@ -266,8 +275,6 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /home/codespace/.gradle/c
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/codespace/.gradle/caches/transforms-4/1db366737265782d77e792c5cd662aff/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/codespace/.gradle/caches/transforms-4/646652c8f0716d503f8a8f736307f2ac/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/codespace/.gradle/caches/transforms-4/646652c8f0716d503f8a8f736307f2ac/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.documentfile:documentfile:1.0.0] /home/codespace/.gradle/caches/transforms-4/a876640fd5ac4dee20cb6550ae5246df/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.documentfile:documentfile:1.0.0] /home/codespace/.gradle/caches/transforms-4/a876640fd5ac4dee20cb6550ae5246df/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/codespace/.gradle/caches/transforms-4/1b5a74cb866f3125c8bc1dbf2783fcf2/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/codespace/.gradle/caches/transforms-4/1b5a74cb866f3125c8bc1dbf2783fcf2/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.print:print:1.0.0] /home/codespace/.gradle/caches/transforms-4/f13e677299b230b66ed6243b0c2ca389/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
@@ -304,7 +311,7 @@ ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms
 		ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
 	android:name
 		ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
-permission#com.hafez.whatsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+permission#com.kaboas.statusvault.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
 		ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
@@ -314,7 +321,7 @@ uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
-uses-permission#com.hafez.whatsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission#com.kaboas.statusvault.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:26:22-94

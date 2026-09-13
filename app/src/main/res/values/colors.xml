@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="splash_bg">#075E54</color>
-    <color name="primary">#25D366</color>
-    <color name="primary_dark">#128C7E</color>
+    <color name="primary">#128C7E</color>
+    <color name="primary_dark">#075E54</color>
+    <color name="primary_light">#25D366</color>
+    <color name="accent">#34B7F1</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="gray_light">#F5F5F5</color>
+    <color name="gray_dark">#666666</color>
+    <color name="splash_bg">#0B6E4F</color>
 </resources>

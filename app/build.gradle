@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.hafez.status'
+    namespace 'com.kaboas.statusvault'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.hafez.status"
+        applicationId "com.kaboas.statusvault"
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -18,10 +18,10 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("../hafez.keystore")
-            storePassword "hafez12345"
-            keyAlias "hafez"
-            keyPassword "hafez12345"
+            storeFile file("../statusvault.keystore")
+            storePassword "status12345"
+            keyAlias "statusvault"
+            keyPassword "status12345"
         }
     }
 
@@ -39,6 +39,9 @@ android {
     kotlinOptions {
         jvmTarget = '17'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -53,4 +56,5 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.16.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+    implementation 'androidx.documentfile:documentfile:1.0.1'
 }

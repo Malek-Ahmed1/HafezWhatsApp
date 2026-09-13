@@ -1,5 +1,18 @@
 <libraries>
   <library
+      name="androidx.databinding:viewbinding:8.5.0@aar"
+      jars="/home/codespace/.gradle/caches/transforms-4/7342fa9c1c9ece3ee69d93756effda06/transformed/viewbinding-8.5.0/jars/classes.jar"
+      resolved="androidx.databinding:viewbinding:8.5.0"
+      folder="/home/codespace/.gradle/caches/transforms-4/7342fa9c1c9ece3ee69d93756effda06/transformed/viewbinding-8.5.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="com.google.android.material:material:1.11.0@aar"
       jars="/home/codespace/.gradle/caches/transforms-4/9c9f7f2f5efc65ee96d1ac30544ae3e3/transformed/material-1.11.0/jars/classes.jar"
       resolved="com.google.android.material:material:1.11.0"
@@ -423,6 +436,19 @@
       jars="/home/codespace/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.8.22/b25c86d47d6b962b9cf0f8c3f320c8a10eea3dd1/kotlin-stdlib-jdk8-1.8.22.jar"
       resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22"/>
   <library
+      name="androidx.documentfile:documentfile:1.0.1@aar"
+      jars="/home/codespace/.gradle/caches/transforms-4/4146da1f2ccddd44c162737012b25698/transformed/documentfile-1.0.1/jars/classes.jar"
+      resolved="androidx.documentfile:documentfile:1.0.1"
+      folder="/home/codespace/.gradle/caches/transforms-4/4146da1f2ccddd44c162737012b25698/transformed/documentfile-1.0.1"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.cursoradapter:cursoradapter:1.0.0@aar"
       jars="/home/codespace/.gradle/caches/transforms-4/d65f2511cf6b149a32fb92e81802c917/transformed/cursoradapter-1.0.0/jars/classes.jar"
       resolved="androidx.cursoradapter:cursoradapter:1.0.0"
@@ -526,19 +552,6 @@
       jars="/home/codespace/.gradle/caches/transforms-4/1db366737265782d77e792c5cd662aff/transformed/interpolator-1.0.0/jars/classes.jar"
       resolved="androidx.interpolator:interpolator:1.0.0"
       folder="/home/codespace/.gradle/caches/transforms-4/1db366737265782d77e792c5cd662aff/transformed/interpolator-1.0.0"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.documentfile:documentfile:1.0.0@aar"
-      jars="/home/codespace/.gradle/caches/transforms-4/a876640fd5ac4dee20cb6550ae5246df/transformed/documentfile-1.0.0/jars/classes.jar"
-      resolved="androidx.documentfile:documentfile:1.0.0"
-      folder="/home/codespace/.gradle/caches/transforms-4/a876640fd5ac4dee20cb6550ae5246df/transformed/documentfile-1.0.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"

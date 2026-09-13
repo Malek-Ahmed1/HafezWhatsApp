@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hafez.status"
+    package="com.kaboas.statusvault"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -17,6 +17,7 @@
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
 
     <queries>
         <package android:name="com.whatsapp" />
@@ -24,21 +25,25 @@
     </queries>
 
     <permission
-        android:name="com.hafez.status.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.kaboas.statusvault.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.hafez.status.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.kaboas.statusvault.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:extractNativeLibs="false"
         android:icon="@mipmap/ic_launcher"
-        android:label="Hafez WhatsApp"
-        android:theme="@style/Theme.Material3.DayNight" >
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.StatusVault" >
         <activity
-            android:name="com.hafez.status.SplashActivity"
-            android:exported="true" >
+            android:name="com.kaboas.statusvault.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.StatusVault" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,15 +51,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.hafez.status.MainActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.hafez.status.StatusMediaActivity"
+            android:name="com.kaboas.statusvault.MainActivity"
             android:exported="false" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.hafez.status.androidx-startup"
+            android:authorities="com.kaboas.statusvault.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

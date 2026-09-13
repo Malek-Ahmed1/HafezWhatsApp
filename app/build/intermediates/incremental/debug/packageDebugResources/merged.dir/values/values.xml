@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="accent">#34B7F1</color>
     <color name="black">#000000</color>
-    <color name="primary">#25D366</color>
-    <color name="primary_dark">#128C7E</color>
-    <color name="splash_bg">#075E54</color>
+    <color name="gray_dark">#666666</color>
+    <color name="gray_light">#F5F5F5</color>
+    <color name="primary">#128C7E</color>
+    <color name="primary_dark">#075E54</color>
+    <color name="primary_light">#25D366</color>
+    <color name="splash_bg">#0B6E4F</color>
     <color name="white">#FFFFFF</color>
+    <string name="add_status">Add Status Media</string>
     <string name="added_favorite">Added to favorites</string>
-    <string name="app_name">Hafez WhatsApp</string>
+    <string name="app_name">StatusVault</string>
+    <string name="brand_name">by Kaboas Nova</string>
     <string name="download">Download</string>
     <string name="favorite">Favorite</string>
     <string name="favorites">Favorites</string>
-    <string name="images">Images</string>
-    <string name="open_whatsapp">Open WhatsApp Reels</string>
-    <string name="open_whatsapp_error">WhatsApp is not installed</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="home">Home</string>
+    <string name="list_empty">List is empty.\nAdd media to see it here.</string>
+    <string name="open_whatsapp">Open WhatsApp</string>
+    <string name="permission_message">StatusVault needs access to your files to find and save WhatsApp statuses.</string>
+    <string name="photos">Photos</string>
+    <string name="recent">Recent</string>
+    <string name="save_whatsapp_media">Save WhatsApp Media</string>
+    <string name="save_whatsapp_media_desc">Choose media from your device and keep it inside the app.</string>
     <string name="saved_failed">Download failed</string>
     <string name="saved_success">Saved successfully</string>
-    <string name="see_status">See Your Status and Download</string>
     <string name="videos">Videos</string>
-    <style name="Theme.Material3.DayNight" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.StatusVault" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorAccent">@color/primary</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
     </style>
 </resources>

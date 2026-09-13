@@ -1,26 +1,54 @@
 [
     {
-        "merged": "com.hafez.whatsapp-debug-39:/layout_activity_status_media.xml.flat",
-        "source": "com.hafez.whatsapp-main-41:/layout/activity_status_media.xml"
+        "merged": "com.kaboas.statusvault.app-debug-39:/layout_activity_splash.xml.flat",
+        "source": "com.kaboas.statusvault.app-main-41:/layout/activity_splash.xml"
     },
     {
-        "merged": "com.hafez.whatsapp-debug-39:/layout_item_media.xml.flat",
-        "source": "com.hafez.whatsapp-main-41:/layout/item_media.xml"
+        "merged": "com.kaboas.statusvault.app-debug-39:/drawable_bg_count.xml.flat",
+        "source": "com.kaboas.statusvault.app-main-41:/drawable/bg_count.xml"
     },
     {
-        "merged": "com.hafez.whatsapp-debug-39:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.hafez.whatsapp-main-41:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.kaboas.statusvault.app-debug-39:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.kaboas.statusvault.app-main-41:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.hafez.whatsapp-debug-39:/layout_activity_splash.xml.flat",
-        "source": "com.hafez.whatsapp-main-41:/layout/activity_splash.xml"
+        "merged": "com.kaboas.statusvault.app-debug-39:/drawable_bg_play_circle.xml.flat",
+        "source": "com.kaboas.statusvault.app-main-41:/drawable/bg_play_circle.xml"
     },
     {
-        "merged": "com.hafez.whatsapp-debug-39:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.hafez.whatsapp-main-41:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.kaboas.statusvault.app-debug-39:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.kaboas.statusvault.app-main-41:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.hafez.whatsapp-debug-39:/layout_activity_main.xml.flat",
-        "source": "com.hafez.whatsapp-main-41:/layout/activity_main.xml"
+        "merged": "com.kaboas.statusvault.app-debug-39:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.kaboas.statusvault.app-main-41:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.kaboas.statusvault.app-debug-39:/layout_activity_main.xml.flat",
+        "source": "com.kaboas.statusvault.app-main-41:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.kaboas.statusvault.app-debug-39:/layout_item_media.xml.flat",
+        "source": "com.kaboas.statusvault.app-main-41:/layout/item_media.xml"
+    },
+    {
+        "merged": "com.kaboas.statusvault.app-debug-39:/drawable_ic_whatsapp.xml.flat",
+        "source": "com.kaboas.statusvault.app-main-41:/drawable/ic_whatsapp.xml"
+    },
+    {
+        "merged": "com.kaboas.statusvault.app-debug-39:/layout_fragment_home.xml.flat",
+        "source": "com.kaboas.statusvault.app-main-41:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.kaboas.statusvault.app-debug-39:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.kaboas.statusvault.app-main-41:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.kaboas.statusvault.app-debug-39:/layout_fragment_media.xml.flat",
+        "source": "com.kaboas.statusvault.app-main-41:/layout/fragment_media.xml"
+    },
+    {
+        "merged": "com.kaboas.statusvault.app-debug-39:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.kaboas.statusvault.app-main-41:/mipmap-anydpi-v26/ic_launcher.xml"
     }
 ]

@@ -1,4 +1,4 @@
-com.hafez.status
+com.kaboas.statusvault
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -1346,6 +1346,7 @@ color abc_tint_edittext
 color abc_tint_seek_thumb
 color abc_tint_spinner
 color abc_tint_switch_track
+color accent
 color accent_material_dark
 color accent_material_light
 color androidx_core_ripple_material_light
@@ -1415,6 +1416,8 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gray_dark
+color gray_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color m3_appbar_overlay_color
@@ -2074,6 +2077,7 @@ color primary
 color primary_dark
 color primary_dark_material_dark
 color primary_dark_material_light
+color primary_light
 color primary_material_dark
 color primary_material_light
 color primary_text_default_material_dark
@@ -2973,6 +2977,8 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg_count
+drawable bg_play_circle
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3004,6 +3010,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable ic_whatsapp
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
 drawable m3_bottom_sheet_drag_handle
@@ -3159,6 +3166,7 @@ id animateToEnd
 id animateToStart
 id antiClockwise
 id anticipate
+id appName
 id arc
 id asConfigured
 id async
@@ -3173,14 +3181,16 @@ id beginning
 id bestChoice
 id blocking
 id bottom
+id bottomNav
 id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id brandName
+id btnAddStatus
 id btnDownload
 id btnFavorite
 id btnOpenWhatsApp
-id btnSeeStatus
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3279,6 +3289,7 @@ id fixed
 id flip
 id floating
 id forever
+id fragmentContainer
 id fragment_container_view_tag
 id frost
 id fullscreen_header
@@ -3304,6 +3315,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imgPlayIcon
 id imgThumb
 id immediateStop
 id included
@@ -3386,6 +3398,10 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id nav_favorites
+id nav_home
+id nav_photos
+id nav_videos
 id navigation_bar_item_active_indicator_view
 id navigation_bar_item_icon_container
 id navigation_bar_item_icon_view
@@ -3446,6 +3462,7 @@ id radio
 id ratio
 id rectangles
 id recyclerMedia
+id recyclerRecent
 id report_drawn
 id reverseSawtooth
 id right
@@ -3516,7 +3533,6 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
-id tabLayout
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -3552,6 +3568,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toolbar
 id top
 id topPanel
 id touch_outside
@@ -3563,6 +3580,10 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id txtCount
+id txtEmpty
+id txtEmptyRecent
+id txtTitle
 id unchecked
 id uniform
 id unlabeled
@@ -3702,7 +3723,6 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout activity_splash
-layout activity_status_media
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3719,6 +3739,8 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_home
+layout fragment_media
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_media
@@ -3783,7 +3805,9 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu bottom_nav_menu
 mipmap ic_launcher
+mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -3812,6 +3836,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string add_status
 string added_favorite
 string androidx_startup
 string app_name
@@ -3822,6 +3847,7 @@ string bottomsheet_action_expand
 string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
+string brand_name
 string call_notification_answer_action
 string call_notification_answer_video_action
 string call_notification_decline_action
@@ -3841,10 +3867,12 @@ string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string favorite
 string favorites
+string grant_permission
 string hide_bottom_view_on_scroll_behavior
+string home
 string icon_content_description
-string images
 string item_view_role_description
+string list_empty
 string m3_exceed_max_badge_text_suffix
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
@@ -3946,19 +3974,22 @@ string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
 string open_whatsapp
-string open_whatsapp_error
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string permission_message
+string photos
+string recent
+string save_whatsapp_media
+string save_whatsapp_media_desc
 string saved_failed
 string saved_success
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
 string searchview_navigation_content_description
-string see_status
 string side_sheet_accessibility_pane_title
 string side_sheet_behavior
 string status_bar_notification_info_overflow
@@ -4588,6 +4619,7 @@ style Theme_MaterialComponents_Light_NoActionBar
 style Theme_MaterialComponents_Light_NoActionBar_Bridge
 style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
+style Theme_StatusVault
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.hafez.whatsapp-mergeDebugResources-37:/values-fi/values-fi.xml",
+            "outputFile": "com.kaboas.statusvault.app-mergeDebugResources-37:/values-fi/values-fi.xml",
             "map": [
                 {
                     "source": "/home/codespace/.gradle/caches/transforms-4/9c9f7f2f5efc65ee96d1ac30544ae3e3/transformed/material-1.11.0/res/values-fi/values-fi.xml",
