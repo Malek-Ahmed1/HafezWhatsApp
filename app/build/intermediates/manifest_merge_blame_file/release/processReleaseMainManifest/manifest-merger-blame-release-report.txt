@@ -8,93 +8,91 @@
 8        android:minSdkVersion="24"
 9        android:targetSdkVersion="34" />
 10
-11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-11-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:5:5-79
-11-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:5:22-77
-12    <uses-permission
-12-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:6:5-7:37
-13        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-13-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:6:22-78
-14        android:maxSdkVersion="28" />
-14-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:7:9-35
-15    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
-15-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:8:5-9:39
-15-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:8:22-79
-16    <uses-permission android:name="android.permission.INTERNET" />
-16-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:10:5-66
-16-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:10:22-64
+11    <uses-permission
+11-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:4:5-5:37
+12        android:name="android.permission.READ_EXTERNAL_STORAGE"
+12-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:4:22-77
+13        android:maxSdkVersion="32" />
+13-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:5:9-35
+14    <uses-permission
+14-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:6:5-7:37
+15        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+15-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:6:22-78
+16        android:maxSdkVersion="28" />
+16-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:7:9-35
 17    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-17-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:11:5-75
-17-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:11:22-73
+17-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:8:5-75
+17-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:8:22-73
 18    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
-18-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:12:5-74
-18-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:12:22-72
-19
-20    <queries>
-20-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:14:5-17:15
-21        <package android:name="com.whatsapp" />
-21-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:15:9-47
-21-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:15:18-45
-22        <package android:name="com.whatsapp.w4b" />
-22-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:16:9-51
-22-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:16:18-49
-23    </queries>
-24
-25    <permission
-25-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
-26        android:name="com.hafez.whatsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-26-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
-27        android:protectionLevel="signature" />
-27-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
-28
-29    <uses-permission android:name="com.hafez.whatsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-29-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
-29-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
-30
-31    <application
-31-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:19:5-37:19
-32        android:allowBackup="true"
-32-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:20:9-35
-33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-33-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
-34        android:extractNativeLibs="false"
-35        android:icon="@mipmap/ic_launcher"
-35-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:21:9-43
-36        android:label="Hafez WhatsApp"
-36-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:22:9-39
-37        android:requestLegacyExternalStorage="true"
-37-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:23:9-52
+18-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:9:5-74
+18-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:9:22-72
+19    <uses-permission android:name="android.permission.INTERNET" />
+19-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:10:5-66
+19-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:10:22-64
+20
+21    <queries>
+21-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:12:5-15:15
+22        <package android:name="com.whatsapp" />
+22-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:13:9-47
+22-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:13:18-45
+23        <package android:name="com.whatsapp.w4b" />
+23-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:14:9-51
+23-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:14:18-49
+24    </queries>
+25
+26    <permission
+26-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+27        android:name="com.hafez.whatsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+27-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+28        android:protectionLevel="signature" />
+28-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+29
+30    <uses-permission android:name="com.hafez.whatsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+30-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+30-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+31
+32    <application
+32-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:17:5-34:19
+33        android:allowBackup="true"
+33-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:18:9-35
+34        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+34-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+35        android:extractNativeLibs="false"
+36        android:icon="@mipmap/ic_launcher"
+36-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:19:9-43
+37        android:label="Hafez WhatsApp"
+37-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:20:9-39
 38        android:theme="@style/Theme.Material3.DayNight" >
-38-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:24:9-56
+38-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:21:9-56
 39        <activity
-39-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:26:9-33:20
+39-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:23:9-30:20
 40            android:name="com.hafez.whatsapp.SplashActivity"
-40-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:27:13-43
+40-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:24:13-43
 41            android:exported="true" >
-41-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:28:13-36
+41-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:25:13-36
 42            <intent-filter>
-42-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:29:13-32:29
+42-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:26:13-29:29
 43                <action android:name="android.intent.action.MAIN" />
-43-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:30:17-68
-43-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:30:25-66
+43-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:27:17-68
+43-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:27:25-66
 44
 45                <category android:name="android.intent.category.LAUNCHER" />
-45-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:31:17-76
-45-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:31:27-74
+45-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:28:17-76
+45-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:28:27-74
 46            </intent-filter>
 47        </activity>
 48        <activity
-48-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:35:9-74
+48-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:32:9-74
 49            android:name="com.hafez.whatsapp.MainActivity"
-49-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:35:19-47
+49-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:32:19-47
 50            android:exported="false" />
-50-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:35:48-72
+50-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:32:48-72
 51        <activity
-51-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:36:9-81
+51-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:33:9-81
 52            android:name="com.hafez.whatsapp.StatusMediaActivity"
-52-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:36:19-54
+52-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:33:19-54
 53            android:exported="false" />
-53-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:36:55-79
+53-->/workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:33:55-79
 54
 55        <provider
 55-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-4/839a791d20cc740a69f5360f35da2876/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
