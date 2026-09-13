@@ -20,6 +20,10 @@
         "source": "com.kaboas.statusvault.app-main-40:/layout/fragment_home.xml"
     },
     {
+        "merged": "com.kaboas.statusvault.app-release-39:/drawable_splash.png.flat",
+        "source": "com.kaboas.statusvault.app-main-40:/drawable/splash.png"
+    },
+    {
         "merged": "com.kaboas.statusvault.app-release-39:/mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "com.kaboas.statusvault.app-main-40:/mipmap-hdpi/ic_launcher_round.png"
     },

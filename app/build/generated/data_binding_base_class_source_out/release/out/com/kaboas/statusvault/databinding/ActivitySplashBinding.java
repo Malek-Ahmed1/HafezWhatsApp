@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -21,19 +20,10 @@ public final class ActivitySplashBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final TextView appName;
-
-  @NonNull
-  public final TextView brandName;
-
-  @NonNull
   public final ImageView splashImage;
 
-  private ActivitySplashBinding(@NonNull RelativeLayout rootView, @NonNull TextView appName,
-      @NonNull TextView brandName, @NonNull ImageView splashImage) {
+  private ActivitySplashBinding(@NonNull RelativeLayout rootView, @NonNull ImageView splashImage) {
     this.rootView = rootView;
-    this.appName = appName;
-    this.brandName = brandName;
     this.splashImage = splashImage;
   }
 
@@ -64,25 +54,13 @@ public final class ActivitySplashBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.appName;
-      TextView appName = ViewBindings.findChildViewById(rootView, id);
-      if (appName == null) {
-        break missingId;
-      }
-
-      id = R.id.brandName;
-      TextView brandName = ViewBindings.findChildViewById(rootView, id);
-      if (brandName == null) {
-        break missingId;
-      }
-
       id = R.id.splashImage;
       ImageView splashImage = ViewBindings.findChildViewById(rootView, id);
       if (splashImage == null) {
         break missingId;
       }
 
-      return new ActivitySplashBinding((RelativeLayout) rootView, appName, brandName, splashImage);
+      return new ActivitySplashBinding((RelativeLayout) rootView, splashImage);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -12,9 +12,8 @@ color white
 drawable bg_count
 drawable bg_play_circle
 drawable ic_whatsapp
-id appName
+drawable splash
 id bottomNav
-id brandName
 id btnAddStatus
 id btnDownload
 id btnFavorite
