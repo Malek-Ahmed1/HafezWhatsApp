@@ -18,7 +18,6 @@ layout activity_splash
 layout activity_status_media
 layout item_media
 mipmap ic_launcher
-mipmap ic_launcher_round
 string added_favorite
 string app_name
 string download

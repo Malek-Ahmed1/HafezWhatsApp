@@ -5606,7 +5606,6 @@ com.hafez.status:layout/mtrl_picker_header_title_text = 0x7f0b005f
 com.hafez.status:color/primary_dark = 0x7f0502ee
 com.hafez.status:anim/mtrl_bottom_sheet_slide_in = 0x7f010029
 com.hafez.status:attr/materialIconButtonFilledTonalStyle = 0x7f0302f3
-com.hafez.status:mipmap/ic_launcher_round = 0x7f0d0001
 com.hafez.status:attr/colorControlNormal = 0x7f0300f9
 com.hafez.status:attr/buttonBarButtonStyle = 0x7f03008a
 com.hafez.status:attr/colorOnPrimary = 0x7f030101
