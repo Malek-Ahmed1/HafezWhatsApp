@@ -19,9 +19,9 @@ android {
     signingConfigs {
         release {
             storeFile file("../hafez.keystore")
-            storePassword "hafez123"
+            storePassword "hafez12345"
             keyAlias "hafez"
-            keyPassword "hafez123"
+            keyPassword "hafez12345"
         }
     }
 
