@@ -130,7 +130,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/codes
 		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:18:9-35
 	android:theme
 		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:21:9-56
-activity#com.hafez.whatsapp.SplashActivity
+activity#com.hafez.status.SplashActivity
 ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:23:9-30:20
 	android:exported
 		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:25:13-36
@@ -146,13 +146,13 @@ category#android.intent.category.LAUNCHER
 ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:28:17-76
 	android:name
 		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:28:27-74
-activity#com.hafez.whatsapp.MainActivity
+activity#com.hafez.status.MainActivity
 ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:32:9-74
 	android:exported
 		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:32:48-72
 	android:name
 		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:32:19-47
-activity#com.hafez.whatsapp.StatusMediaActivity
+activity#com.hafez.status.StatusMediaActivity
 ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:33:9-81
 	android:exported
 		ADDED from /workspaces/HafezWhatsApp/app/src/main/AndroidManifest.xml:33:55-79
@@ -296,7 +296,7 @@ ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms
 		ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
 	android:name
 		ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
-permission#com.hafez.whatsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+permission#com.hafez.status.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
 		ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
@@ -306,7 +306,7 @@ uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
-uses-permission#com.hafez.whatsapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission#com.hafez.status.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/AndroidManifest.xml:26:22-94

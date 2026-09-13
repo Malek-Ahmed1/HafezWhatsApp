@@ -1,11 +1,11 @@
-package com.hafez.whatsapp.utils
+package com.hafez.status.utils
 
 import android.content.Context
 import android.media.MediaScannerConnection
 import android.os.Environment
 import android.widget.Toast
-import com.hafez.whatsapp.R
-import com.hafez.whatsapp.data.MediaType
+import com.hafez.status.R
+import com.hafez.status.data.MediaType
 import java.io.File
 import java.io.IOException
 

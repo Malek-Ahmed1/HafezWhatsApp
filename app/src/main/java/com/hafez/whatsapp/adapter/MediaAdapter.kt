@@ -1,4 +1,4 @@
-package com.hafez.whatsapp.adapter
+package com.hafez.status.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.hafez.whatsapp.R
+import com.hafez.status.R
 import java.io.File
 
 class MediaAdapter(

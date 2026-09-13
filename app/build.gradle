@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.hafez.whatsapp'
+    namespace 'com.hafez.status'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.hafez.whatsapp"
+        applicationId "com.hafez.status"
         minSdk 24
         targetSdk 34
         versionCode 1

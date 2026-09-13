@@ -1,4 +1,4 @@
-package com.hafez.whatsapp
+package com.hafez.status
 
 import android.Manifest
 import android.content.Intent
@@ -16,12 +16,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.tabs.TabLayout
-import com.hafez.whatsapp.adapter.MediaAdapter
-import com.hafez.whatsapp.data.AppDatabase
-import com.hafez.whatsapp.data.FavoriteEntity
-import com.hafez.whatsapp.data.MediaRepository
-import com.hafez.whatsapp.data.MediaType
-import com.hafez.whatsapp.utils.DownloadHelper
+import com.hafez.status.adapter.MediaAdapter
+import com.hafez.status.data.AppDatabase
+import com.hafez.status.data.FavoriteEntity
+import com.hafez.status.data.MediaRepository
+import com.hafez.status.data.MediaType
+import com.hafez.status.utils.DownloadHelper
 import kotlinx.coroutines.launch
 import java.io.File
 

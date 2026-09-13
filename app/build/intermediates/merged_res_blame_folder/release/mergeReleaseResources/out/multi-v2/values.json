@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.hafez.whatsapp-mergeReleaseResources-37:/values/values.xml",
+            "outputFile": "com.hafez.status.app-mergeReleaseResources-37:/values/values.xml",
             "map": [
                 {
                     "source": "/workspaces/HafezWhatsApp/app/src/main/res/values/themes.xml",

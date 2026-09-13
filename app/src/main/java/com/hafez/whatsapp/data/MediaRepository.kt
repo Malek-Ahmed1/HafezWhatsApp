@@ -1,4 +1,4 @@
-package com.hafez.whatsapp.data
+package com.hafez.status.data
 
 import android.os.Environment
 import java.io.File

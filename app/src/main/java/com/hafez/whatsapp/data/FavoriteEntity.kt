@@ -1,4 +1,4 @@
-package com.hafez.whatsapp.data
+package com.hafez.status.data
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

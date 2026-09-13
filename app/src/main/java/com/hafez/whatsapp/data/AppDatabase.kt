@@ -1,4 +1,4 @@
-package com.hafez.whatsapp.data
+package com.hafez.status.data
 
 import android.content.Context
 import androidx.room.Database

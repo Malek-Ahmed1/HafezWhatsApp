@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.hafez.whatsapp-mergeReleaseResources-37:/values-ar/values-ar.xml",
+            "outputFile": "com.hafez.status.app-mergeReleaseResources-37:/values-ar/values-ar.xml",
             "map": [
                 {
                     "source": "/home/codespace/.gradle/caches/transforms-4/bc6b217408222051625522348f6f981c/transformed/core-1.12.0/res/values-ar/values-ar.xml",
