@@ -1,4 +1,4 @@
-name: Build APK
+name: Build StatusVault APK
 
 on:
   push:
@@ -24,8 +24,10 @@ jobs:
       - name: Build Debug APK
         run: ./gradlew assembleDebug --no-daemon
 
-      - name: Upload APK
+      - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: StatusVault-Debug
+          name: StatusVault-APK
           path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 30
