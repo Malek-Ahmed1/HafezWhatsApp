@@ -12,7 +12,7 @@ import com.kaboas.statusvault.R
 import java.io.File
 
 class MediaAdapter(
-    private var items: List<File>,
+    private var items: MutableList<File>,
     private val onDownload: (File) -> Unit,
     private val onFavorite: (File) -> Unit,
     private val onDelete: (File) -> Unit,
@@ -52,8 +52,16 @@ class MediaAdapter(
 
     override fun getItemCount() = items.size
 
+    fun removeItem(file: File) {
+        val index = items.indexOf(file)
+        if (index >= 0) {
+            items.removeAt(index)
+            notifyItemRemoved(index)
+        }
+    }
+
     fun updateData(newItems: List<File>) {
-        items = newItems
+        items = newItems.toMutableList()
         notifyDataSetChanged()
     }
 }

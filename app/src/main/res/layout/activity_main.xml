@@ -51,6 +51,8 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@null"
+        app:itemTextColor="@color/primary_dark"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent" />
 

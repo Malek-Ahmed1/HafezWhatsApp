@@ -7,19 +7,41 @@ enum class MediaType { IMAGE, VIDEO }
 
 object MediaRepository {
 
-    fun getStatusDirs(): List<File> {
-        val dirs = mutableListOf<File>()
-        val paths = listOf(
+    private var cachedDirs: List<File>? = null
+
+    fun findStatusDirs(): List<File> {
+        cachedDirs?.let { return it }
+
+        val results = mutableListOf<File>()
+
+        // 1) المسارات المعروفة (سريعة)
+        val knownPaths = listOf(
             "/WhatsApp/Media/.Statuses",
             "/WhatsApp Business/Media/.Statuses",
             "/Android/media/com.whatsapp/WhatsApp/Media/.Statuses",
-            "/Android/media/com.whatsapp.w4b/WhatsApp Business/Media/.Statuses"
+            "/Android/media/com.whatsapp.w4b/WhatsApp Business/Media/.Statuses",
+            "/WhatsApp/Media/Statuses",
+            "/Android/media/com.whatsapp/WhatsApp/Media/Statuses"
         )
-        paths.forEach { path ->
+        knownPaths.forEach { path ->
             val dir = File(Environment.getExternalStorageDirectory(), path)
-            if (dir.exists() && dir.isDirectory) dirs.add(dir)
+            if (dir.exists() && dir.isDirectory) results.add(dir)
         }
-        return dirs
+
+        // 2) بحث ديناميكي لو ملقيناش حاجة
+        if (results.isEmpty()) {
+            try {
+                File("/storage/emulated/0").walkTopDown()
+                    .maxDepth(6)
+                    .filter { it.isDirectory && (it.name == ".Statuses" || it.name == "Statuses") }
+                    .take(10)
+                    .forEach { results.add(it) }
+            } catch (_: Exception) { }
+        }
+
+        val unique = results.distinct()
+        cachedDirs = unique
+        return unique
     }
 
     fun listMedia(type: MediaType): List<File> {
@@ -28,11 +50,17 @@ object MediaRepository {
             MediaType.IMAGE -> listOf("jpg", "jpeg", "png", "webp")
             MediaType.VIDEO -> listOf("mp4", "mkv", "3gp", "avi")
         }
-        getStatusDirs().forEach { dir ->
+        findStatusDirs().forEach { dir ->
             dir.listFiles()?.forEach { file ->
-                if (file.extension.lowercase() in extensions) result.add(file)
+                if (file.isFile && file.extension.lowercase() in extensions) {
+                    result.add(file)
+                }
             }
         }
         return result.sortedByDescending { it.lastModified() }
+    }
+
+    fun clearCache() {
+        cachedDirs = null
     }
 }

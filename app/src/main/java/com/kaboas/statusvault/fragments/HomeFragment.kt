@@ -25,22 +25,35 @@ import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
 
+    private var adapter: MediaAdapter? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
+    override fun onResume() {
+        super.onResume()
+        MediaRepository.clearCache()
+        loadRecent()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val btnOpenWhatsApp = view.findViewById<MaterialButton>(R.id.btnOpenWhatsApp)
-        val recyclerRecent = view.findViewById<RecyclerView>(R.id.recyclerRecent)
-        val txtEmptyRecent = view.findViewById<TextView>(R.id.txtEmptyRecent)
-
         btnOpenWhatsApp.setOnClickListener {
             (activity as? MainActivity)?.openWhatsApp()
         }
+
+        loadRecent()
+    }
+
+    private fun loadRecent() {
+        val v = view ?: return
+        val recyclerRecent = v.findViewById<RecyclerView>(R.id.recyclerRecent)
+        val txtEmptyRecent = v.findViewById<TextView>(R.id.txtEmptyRecent)
 
         recyclerRecent.layoutManager = GridLayoutManager(requireContext(), 2)
 
@@ -55,35 +68,40 @@ class HomeFragment : Fragment() {
             recyclerRecent.visibility = View.VISIBLE
             txtEmptyRecent.visibility = View.GONE
 
-            val adapter = MediaAdapter(
-                recent,
-                onDownload = { file ->
-                    val type = if (file.extension.lowercase() in listOf("mp4", "mkv", "3gp", "avi"))
-                        MediaType.VIDEO else MediaType.IMAGE
-                    DownloadHelper.downloadFile(requireContext(), file, type)
-                },
-                onFavorite = { file ->
-                    lifecycleScope.launch {
-                        AppDatabase.getInstance(requireContext()).favoriteDao().insert(
-                            FavoriteEntity(file.absolutePath, file.name, file.extension)
-                        )
-                        Toast.makeText(requireContext(), "⭐ Added to favorites", Toast.LENGTH_SHORT).show()
+            if (adapter == null) {
+                adapter = MediaAdapter(
+                    recent.toMutableList(),
+                    onDownload = { file ->
+                        val type = if (file.extension.lowercase() in listOf("mp4", "mkv", "3gp", "avi"))
+                            MediaType.VIDEO else MediaType.IMAGE
+                        DownloadHelper.downloadFile(requireContext(), file, type)
+                    },
+                    onFavorite = { file ->
+                        lifecycleScope.launch {
+                            AppDatabase.getInstance(requireContext()).favoriteDao().insert(
+                                FavoriteEntity(file.absolutePath, file.name, file.extension)
+                            )
+                            Toast.makeText(requireContext(), "⭐ Added to favorites", Toast.LENGTH_SHORT).show()
+                        }
+                    },
+                    onDelete = { file ->
+                        if (file.delete()) {
+                            adapter?.removeItem(file)
+                            Toast.makeText(requireContext(), "🗑️ Deleted", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(requireContext(), "❌ Could not delete", Toast.LENGTH_SHORT).show()
+                        }
+                    },
+                    onItemClick = { file ->
+                        val intent = Intent(requireContext(), PreviewActivity::class.java)
+                        intent.putExtra("file_path", file.absolutePath)
+                        startActivity(intent)
                     }
-                },
-                onDelete = { file ->
-                    if (file.delete()) {
-                        Toast.makeText(requireContext(), "🗑️ Deleted", Toast.LENGTH_SHORT).show()
-                    } else {
-                        Toast.makeText(requireContext(), "Could not delete", Toast.LENGTH_SHORT).show()
-                    }
-                },
-                onItemClick = { file ->
-                    val intent = Intent(requireContext(), PreviewActivity::class.java)
-                    intent.putExtra("file_path", file.absolutePath)
-                    startActivity(intent)
-                }
-            )
-            recyclerRecent.adapter = adapter
+                )
+                recyclerRecent.adapter = adapter
+            } else {
+                adapter?.updateData(recent)
+            }
         }
     }
 }

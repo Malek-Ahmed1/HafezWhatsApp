@@ -19,6 +19,9 @@ interface FavoriteDao {
     @Delete
     suspend fun delete(item: FavoriteEntity)
 
+    @Query("DELETE FROM favorites WHERE path = :path")
+    suspend fun deleteByPath(path: String)
+
     @Query("SELECT EXISTS(SELECT 1 FROM favorites WHERE path = :path)")
     suspend fun isFavorite(path: String): Boolean
 }
