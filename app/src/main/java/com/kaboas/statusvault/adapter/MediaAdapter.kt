@@ -15,6 +15,7 @@ class MediaAdapter(
     private var items: List<File>,
     private val onDownload: (File) -> Unit,
     private val onFavorite: (File) -> Unit,
+    private val onDelete: (File) -> Unit,
     private val onItemClick: (File) -> Unit
 ) : RecyclerView.Adapter<MediaAdapter.VH>() {
 
@@ -23,6 +24,7 @@ class MediaAdapter(
         val playIcon: ImageView = v.findViewById(R.id.imgPlayIcon)
         val btnDownload: Button = v.findViewById(R.id.btnDownload)
         val btnFav: ImageButton = v.findViewById(R.id.btnFavorite)
+        val btnDelete: ImageButton = v.findViewById(R.id.btnDelete)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
@@ -44,6 +46,7 @@ class MediaAdapter(
 
         holder.btnDownload.setOnClickListener { onDownload(file) }
         holder.btnFav.setOnClickListener { onFavorite(file) }
+        holder.btnDelete.setOnClickListener { onDelete(file) }
         holder.itemView.setOnClickListener { onItemClick(file) }
     }
 

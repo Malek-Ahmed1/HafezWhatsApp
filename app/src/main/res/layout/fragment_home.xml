@@ -1,60 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_light">
+    android:background="#F5F5F5">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_marginBottom="16dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="16dp"
-                android:gravity="center_vertical">
-
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@android:drawable/ic_menu_save"
-                    android:layout_marginEnd="12dp" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/save_whatsapp_media"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/save_whatsapp_media_desc"
-                        android:textSize="12sp"
-                        android:textColor="@color/gray_dark"
-                        android:layout_marginTop="4dp" />
-                </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnOpenWhatsApp"
@@ -68,24 +23,7 @@
             app:iconPadding="12dp"
             app:backgroundTint="@color/primary"
             android:textColor="@color/white"
-            android:layout_marginBottom="12dp"
-            xmlns:app="http://schemas.android.com/apk/res-auto" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnAddStatus"
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="@string/add_status"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:icon="@android:drawable/ic_input_add"
-            app:iconGravity="textStart"
-            app:iconPadding="12dp"
-            app:strokeColor="@color/primary"
-            android:textColor="@color/primary"
-            android:layout_marginBottom="24dp"
-            xmlns:app="http://schemas.android.com/apk/res-auto" />
+            android:layout_marginBottom="24dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -106,7 +44,7 @@
             android:id="@+id/txtEmptyRecent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/list_empty"
+            android:text="✨ No media yet\nOpen WhatsApp to view statuses"
             android:textSize="14sp"
             android:textColor="@color/gray_dark"
             android:gravity="center"

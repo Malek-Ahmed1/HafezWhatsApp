@@ -1,5 +1,6 @@
 package com.kaboas.statusvault.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.kaboas.statusvault.PreviewActivity
 import com.kaboas.statusvault.R
 import com.kaboas.statusvault.adapter.MediaAdapter
 import com.kaboas.statusvault.data.AppDatabase
@@ -64,12 +66,13 @@ class MediaFragment : Fragment() {
 
         recycler.layoutManager = GridLayoutManager(requireContext(), 2)
 
-        val files = if (isFavorites) {
-            txtTitle.text = "Favorites"
-            // مؤقتاً فاضي لحد ما نضيف Room
-            emptyList<File>()
+        val files: List<File> = if (isFavorites) {
+            txtTitle.text = "⭐ Favorites"
+            txtEmpty.text = "⭐ No favorites yet\nTap the star on any media"
+            emptyList()
         } else {
-            txtTitle.text = if (type == MediaType.VIDEO) "Videos" else "Photos"
+            txtTitle.text = if (type == MediaType.VIDEO) "🎥 Videos" else "🖼️ Photos"
+            txtEmpty.text = if (type == MediaType.VIDEO) "🎥 No videos yet" else "🖼️ No photos yet"
             MediaRepository.listMedia(type)
         }
 
@@ -81,6 +84,7 @@ class MediaFragment : Fragment() {
         } else {
             recycler.visibility = View.VISIBLE
             txtEmpty.visibility = View.GONE
+
             val adapter = MediaAdapter(
                 files,
                 onDownload = { file ->
@@ -91,10 +95,21 @@ class MediaFragment : Fragment() {
                         AppDatabase.getInstance(requireContext()).favoriteDao().insert(
                             FavoriteEntity(file.absolutePath, file.name, file.extension)
                         )
-                        Toast.makeText(requireContext(), R.string.added_favorite, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "⭐ Added to favorites", Toast.LENGTH_SHORT).show()
                     }
                 },
-                onItemClick = { }
+                onDelete = { file ->
+                    if (file.delete()) {
+                        Toast.makeText(requireContext(), "🗑️ Deleted", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(requireContext(), "Could not delete", Toast.LENGTH_SHORT).show()
+                    }
+                },
+                onItemClick = { file ->
+                    val intent = Intent(requireContext(), PreviewActivity::class.java)
+                    intent.putExtra("file_path", file.absolutePath)
+                    startActivity(intent)
+                }
             )
             recycler.adapter = adapter
         }
