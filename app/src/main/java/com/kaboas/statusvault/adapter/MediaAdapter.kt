@@ -3,7 +3,6 @@ package com.kaboas.statusvault.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
@@ -22,7 +21,7 @@ class MediaAdapter(
     inner class VH(v: View) : RecyclerView.ViewHolder(v) {
         val img: ImageView = v.findViewById(R.id.imgThumb)
         val playIcon: ImageView = v.findViewById(R.id.imgPlayIcon)
-        val btnDownload: Button = v.findViewById(R.id.btnDownload)
+        val btnDownload: ImageButton = v.findViewById(R.id.btnDownload)
         val btnFav: ImageButton = v.findViewById(R.id.btnFavorite)
         val btnDelete: ImageButton = v.findViewById(R.id.btnDelete)
     }
