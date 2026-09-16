@@ -25,12 +25,8 @@
 
             <ImageView
                 android:id="@+id/imgPlayIcon"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:layout_gravity="center"
-                android:src="@android:drawable/ic_media_play"
-                android:background="@drawable/bg_play_circle"
-                android:padding="14dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:visibility="gone" />
         </FrameLayout>
 
@@ -38,42 +34,39 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="6dp"
+            android:padding="4dp"
             android:gravity="center_vertical">
 
-            <com.google.android.material.button.MaterialButton
+            <ImageButton
                 android:id="@+id/btnDownload"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="40dp"
-                android:text="Download"
-                android:textSize="12sp"
-                android:textColor="@color/white"
-                android:backgroundTint="@color/primary"
-                app:icon="@drawable/ic_download_color"
-                app:iconTint="@color/white"
-                app:iconGravity="textStart"
-                app:iconPadding="4dp"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp" />
+                android:layout_height="48dp"
+                android:background="@drawable/bg_download_button"
+                android:src="@drawable/noto_download"
+                android:contentDescription="Download"
+                android:scaleType="fitCenter"
+                android:padding="8dp" />
 
             <ImageButton
                 android:id="@+id/btnFavorite"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="4dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_favorite_color"
-                android:contentDescription="Favorite" />
+                android:src="@drawable/noto_favorite"
+                android:contentDescription="Favorite"
+                android:padding="8dp" />
 
             <ImageButton
                 android:id="@+id/btnDelete"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="4dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_delete_color"
-                android:contentDescription="Delete" />
+                android:contentDescription="Delete"
+                android:padding="8dp" />
 
         </LinearLayout>
 

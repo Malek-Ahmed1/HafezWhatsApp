@@ -7,7 +7,6 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.google.android.material.button.MaterialButton
 import com.kaboas.statusvault.R
 import java.io.File
 
@@ -21,8 +20,7 @@ class MediaAdapter(
 
     inner class VH(v: View) : RecyclerView.ViewHolder(v) {
         val img: ImageView = v.findViewById(R.id.imgThumb)
-        val playIcon: ImageView = v.findViewById(R.id.imgPlayIcon)
-        val btnDownload: MaterialButton = v.findViewById(R.id.btnDownload)
+        val btnDownload: ImageButton = v.findViewById(R.id.btnDownload)
         val btnFav: ImageButton = v.findViewById(R.id.btnFavorite)
         val btnDelete: ImageButton = v.findViewById(R.id.btnDelete)
     }
@@ -40,9 +38,6 @@ class MediaAdapter(
             .load(file)
             .centerCrop()
             .into(holder.img)
-
-        val isVideo = file.extension.lowercase() in listOf("mp4", "mkv", "3gp", "avi")
-        holder.playIcon.visibility = if (isVideo) View.VISIBLE else View.GONE
 
         holder.btnDownload.setOnClickListener { onDownload(file) }
         holder.btnFav.setOnClickListener { onFavorite(file) }
