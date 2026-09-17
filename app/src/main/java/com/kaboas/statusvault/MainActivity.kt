@@ -8,12 +8,12 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.Settings
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.kaboas.statusvault.data.MediaType
 import com.kaboas.statusvault.fragments.HomeFragment
 import com.kaboas.statusvault.fragments.MediaFragment
@@ -30,24 +30,28 @@ class MainActivity : AppCompatActivity() {
 
         checkStoragePermission()
 
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
-        bottomNav.setOnItemSelectedListener { item ->
-            val fragment: Fragment = when (item.itemId) {
-                R.id.nav_home -> HomeFragment()
-                R.id.nav_videos -> MediaFragment.newInstance(MediaType.VIDEO)
-                R.id.nav_photos -> MediaFragment.newInstance(MediaType.IMAGE)
-                R.id.nav_favorites -> MediaFragment.newInstanceFavorites()
-                else -> HomeFragment()
-            }
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, fragment)
-                .commit()
-            true
+        findViewById<LinearLayout>(R.id.navHome).setOnClickListener {
+            switchFragment(HomeFragment())
+        }
+        findViewById<LinearLayout>(R.id.navVideos).setOnClickListener {
+            switchFragment(MediaFragment.newInstance(MediaType.VIDEO))
+        }
+        findViewById<LinearLayout>(R.id.navPhotos).setOnClickListener {
+            switchFragment(MediaFragment.newInstance(MediaType.IMAGE))
+        }
+        findViewById<LinearLayout>(R.id.navFavorites).setOnClickListener {
+            switchFragment(MediaFragment.newInstanceFavorites())
         }
 
         if (savedInstanceState == null) {
-            bottomNav.selectedItemId = R.id.nav_home
+            switchFragment(HomeFragment())
         }
+    }
+
+    private fun switchFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit()
     }
 
     private fun checkStoragePermission() {
