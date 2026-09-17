@@ -31,7 +31,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/emoji_download"
+                android:src="@drawable/ic_download_color"
                 android:contentDescription="Download"
                 android:padding="8dp" />
 
