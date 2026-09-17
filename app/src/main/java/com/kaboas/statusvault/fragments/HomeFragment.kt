@@ -26,6 +26,8 @@ import kotlinx.coroutines.launch
 class HomeFragment : Fragment() {
 
     private var adapter: MediaAdapter? = null
+    private var recycler: RecyclerView? = null
+    private var txtEmpty: TextView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -47,26 +49,28 @@ class HomeFragment : Fragment() {
             (activity as? MainActivity)?.openWhatsApp()
         }
 
+        recycler = view.findViewById(R.id.recyclerRecent)
+        txtEmpty = view.findViewById(R.id.txtEmptyRecent)
+
         loadRecent()
     }
 
     private fun loadRecent() {
-        val v = view ?: return
-        val recyclerRecent = v.findViewById<RecyclerView>(R.id.recyclerRecent)
-        val txtEmptyRecent = v.findViewById<TextView>(R.id.txtEmptyRecent)
+        val r = recycler ?: return
+        val e = txtEmpty ?: return
 
-        recyclerRecent.layoutManager = GridLayoutManager(requireContext(), 2)
+        r.layoutManager = GridLayoutManager(requireContext(), 2)
 
         val allMedia = MediaRepository.listMedia(MediaType.IMAGE) +
                 MediaRepository.listMedia(MediaType.VIDEO)
         val recent = allMedia.sortedByDescending { it.lastModified() }.take(6)
 
         if (recent.isEmpty()) {
-            recyclerRecent.visibility = View.GONE
-            txtEmptyRecent.visibility = View.VISIBLE
+            r.visibility = View.GONE
+            e.visibility = View.VISIBLE
         } else {
-            recyclerRecent.visibility = View.VISIBLE
-            txtEmptyRecent.visibility = View.GONE
+            r.visibility = View.VISIBLE
+            e.visibility = View.GONE
 
             if (adapter == null) {
                 adapter = MediaAdapter(
@@ -77,16 +81,15 @@ class HomeFragment : Fragment() {
                         DownloadHelper.downloadFile(requireContext(), file, type)
                     },
                     onFavorite = { file ->
-                        lifecycleScope.launch {
-                            AppDatabase.getInstance(requireContext()).favoriteDao().insert(
-                                FavoriteEntity(file.absolutePath, file.name, file.extension)
-                            )
-                            Toast.makeText(requireContext(), "⭐ Added to favorites", Toast.LENGTH_SHORT).show()
-                        }
+                        toggleFavorite(file)
                     },
                     onDelete = { file ->
                         if (file.delete()) {
                             adapter?.removeItem(file)
+                            if (adapter?.itemCount == 0) {
+                                r.visibility = View.GONE
+                                e.visibility = View.VISIBLE
+                            }
                             Toast.makeText(requireContext(), "🗑️ Deleted", Toast.LENGTH_SHORT).show()
                         } else {
                             Toast.makeText(requireContext(), "❌ Could not delete", Toast.LENGTH_SHORT).show()
@@ -98,9 +101,23 @@ class HomeFragment : Fragment() {
                         startActivity(intent)
                     }
                 )
-                recyclerRecent.adapter = adapter
+                r.adapter = adapter
             } else {
                 adapter?.updateData(recent)
+            }
+        }
+    }
+
+    private fun toggleFavorite(file: java.io.File) {
+        lifecycleScope.launch {
+            val dao = AppDatabase.getInstance(requireContext()).favoriteDao()
+            val isFav = dao.isFavorite(file.absolutePath)
+            if (isFav) {
+                dao.deleteByPath(file.absolutePath)
+                Toast.makeText(requireContext(), "💔 Removed from favorites", Toast.LENGTH_SHORT).show()
+            } else {
+                dao.insert(FavoriteEntity(file.absolutePath, file.name, file.extension))
+                Toast.makeText(requireContext(), "⭐ Added to favorites", Toast.LENGTH_SHORT).show()
             }
         }
     }
