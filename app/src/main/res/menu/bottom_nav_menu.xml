@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_home"
-        android:icon="@drawable/noto_home"
+        android:icon="@drawable/emoji_home"
         android:title="@string/home" />
     <item
         android:id="@+id/nav_videos"
-        android:icon="@drawable/noto_video"
+        android:icon="@drawable/emoji_videos"
         android:title="@string/videos" />
     <item
         android:id="@+id/nav_photos"
-        android:icon="@drawable/noto_photo"
+        android:icon="@drawable/emoji_photos"
         android:title="@string/photos" />
     <item
         android:id="@+id/nav_favorites"
-        android:icon="@drawable/noto_favorite"
+        android:icon="@drawable/emoji_favorites"
         android:title="@string/favorites" />
 </menu>
