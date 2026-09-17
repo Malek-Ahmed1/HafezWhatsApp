@@ -41,7 +41,7 @@
                 android:layout_height="48dp"
                 android:layout_marginStart="24dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/emoji_heart"
+                android:src="@drawable/emoji_favorites"
                 android:contentDescription="Favorite"
                 android:padding="8dp" />
 
