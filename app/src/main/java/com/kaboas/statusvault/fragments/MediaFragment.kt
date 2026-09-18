@@ -27,8 +27,6 @@ class MediaFragment : Fragment() {
     private var adapter: MediaAdapter? = null
     private var isFavorites = false
     private var mediaType = MediaType.IMAGE
-    private var recycler: RecyclerView? = null
-    private var txtEmpty: TextView? = null
 
     companion object {
         private const val ARG_TYPE = "type"
@@ -76,46 +74,46 @@ class MediaFragment : Fragment() {
         val v = view ?: return
         val txtTitle = v.findViewById<TextView>(R.id.txtTitle)
         val txtCount = v.findViewById<TextView>(R.id.txtCount)
-        recycler = v.findViewById(R.id.recyclerMedia)
-        txtEmpty = v.findViewById(R.id.txtEmpty)
+        val recycler = v.findViewById<RecyclerView>(R.id.recyclerMedia)
+        val txtEmpty = v.findViewById<TextView>(R.id.txtEmpty)
 
-        recycler?.layoutManager = GridLayoutManager(requireContext(), 2)
+        recycler.layoutManager = GridLayoutManager(requireContext(), 2)
 
         if (isFavorites) {
-            txtTitle.text = "❤️ Favorites"
-            txtEmpty?.text = "❤️ No favorites yet\nTap the heart on any media"
-            loadFavorites(txtCount)
+            txtTitle.text = "⭐ Favorites"
+            txtEmpty.text = "⭐ No favorites yet\nTap the star on any media"
+            loadFavorites(recycler, txtCount, txtEmpty)
         } else {
-            txtTitle.text = if (mediaType == MediaType.VIDEO) "🎬 Videos" else "📸 Photos"
-            txtEmpty?.text = if (mediaType == MediaType.VIDEO) "🎬 No videos yet\nOpen WhatsApp to view statuses" else "📸 No photos yet\nOpen WhatsApp to view statuses"
+            txtTitle.text = if (mediaType == MediaType.VIDEO) "🎥 Videos" else "🖼️ Photos"
+            txtEmpty.text = if (mediaType == MediaType.VIDEO) "🎥 No videos yet\nOpen WhatsApp to view statuses" else "🖼️ No photos yet\nOpen WhatsApp to view statuses"
             val files = MediaRepository.listMedia(mediaType)
             txtCount.text = files.size.toString()
-            showList(files)
+            showList(recycler, txtEmpty, files)
         }
     }
 
-    private fun loadFavorites(txtCount: TextView) {
-        val dao = AppDatabase.getInstance(requireContext()).favoriteDao()
-        dao.getAll().observe(viewLifecycleOwner) { favs ->
-            val files = favs.mapNotNull {
-                val f = File(it.path)
-                if (f.exists()) f else null
+    private fun loadFavorites(recycler: RecyclerView, txtCount: TextView, txtEmpty: TextView) {
+        lifecycleScope.launch {
+            val dao = AppDatabase.getInstance(requireContext()).favoriteDao()
+            val all = dao.getAll()
+            all.observe(viewLifecycleOwner) { favs ->
+                val files = favs.mapNotNull {
+                    val f = File(it.path)
+                    if (f.exists()) f else null
+                }
+                txtCount.text = files.size.toString()
+                showList(recycler, txtEmpty, files)
             }
-            txtCount.text = files.size.toString()
-            showList(files)
         }
     }
 
-    private fun showList(files: List<File>) {
-        val r = recycler ?: return
-        val e = txtEmpty ?: return
-
+    private fun showList(recycler: RecyclerView, txtEmpty: TextView, files: List<File>) {
         if (files.isEmpty()) {
-            r.visibility = View.GONE
-            e.visibility = View.VISIBLE
+            recycler.visibility = View.GONE
+            txtEmpty.visibility = View.VISIBLE
         } else {
-            r.visibility = View.VISIBLE
-            e.visibility = View.GONE
+            recycler.visibility = View.VISIBLE
+            txtEmpty.visibility = View.GONE
 
             if (adapter == null) {
                 adapter = MediaAdapter(
@@ -124,16 +122,16 @@ class MediaFragment : Fragment() {
                         DownloadHelper.downloadFile(requireContext(), file, mediaType)
                     },
                     onFavorite = { file ->
-                        toggleFavorite(file)
+                        lifecycleScope.launch {
+                            AppDatabase.getInstance(requireContext()).favoriteDao().insert(
+                                FavoriteEntity(file.absolutePath, file.name, file.extension)
+                            )
+                            Toast.makeText(requireContext(), "⭐ Added to favorites", Toast.LENGTH_SHORT).show()
+                        }
                     },
                     onDelete = { file ->
                         if (file.delete()) {
                             adapter?.removeItem(file)
-                            // نتحقق بعد الحذف لو القايمة فاضية
-                            if (adapter?.itemCount == 0) {
-                                r.visibility = View.GONE
-                                e.visibility = View.VISIBLE
-                            }
                             Toast.makeText(requireContext(), "🗑️ Deleted", Toast.LENGTH_SHORT).show()
                         } else {
                             Toast.makeText(requireContext(), "❌ Could not delete", Toast.LENGTH_SHORT).show()
@@ -145,23 +143,9 @@ class MediaFragment : Fragment() {
                         startActivity(intent)
                     }
                 )
-                r.adapter = adapter
+                recycler.adapter = adapter
             } else {
                 adapter?.updateData(files)
-            }
-        }
-    }
-
-    private fun toggleFavorite(file: File) {
-        lifecycleScope.launch {
-            val dao = AppDatabase.getInstance(requireContext()).favoriteDao()
-            val isFav = dao.isFavorite(file.absolutePath)
-            if (isFav) {
-                dao.deleteByPath(file.absolutePath)
-                Toast.makeText(requireContext(), "💔 Removed from favorites", Toast.LENGTH_SHORT).show()
-            } else {
-                dao.insert(FavoriteEntity(file.absolutePath, file.name, file.extension))
-                Toast.makeText(requireContext(), "⭐ Added to favorites", Toast.LENGTH_SHORT).show()
             }
         }
     }

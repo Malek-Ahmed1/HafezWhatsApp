@@ -8,13 +8,12 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.Settings
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.kaboas.statusvault.data.MediaRepository
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.kaboas.statusvault.data.MediaType
 import com.kaboas.statusvault.fragments.HomeFragment
 import com.kaboas.statusvault.fragments.MediaFragment
@@ -23,14 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     private val requestPermission = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
-    ) { granted ->
-        MediaRepository.clearCache()
-        if (granted) {
-            switchFragment(HomeFragment())
-        } else {
-            Toast.makeText(this, "Permission needed to read statuses", Toast.LENGTH_LONG).show()
-        }
-    }
+    ) { }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,42 +30,29 @@ class MainActivity : AppCompatActivity() {
 
         checkStoragePermission()
 
-        findViewById<LinearLayout>(R.id.navHome).setOnClickListener {
-            MediaRepository.clearCache()
-            switchFragment(HomeFragment())
-        }
-        findViewById<LinearLayout>(R.id.navVideos).setOnClickListener {
-            MediaRepository.clearCache()
-            switchFragment(MediaFragment.newInstance(MediaType.VIDEO))
-        }
-        findViewById<LinearLayout>(R.id.navPhotos).setOnClickListener {
-            MediaRepository.clearCache()
-            switchFragment(MediaFragment.newInstance(MediaType.IMAGE))
-        }
-        findViewById<LinearLayout>(R.id.navFavorites).setOnClickListener {
-            switchFragment(MediaFragment.newInstanceFavorites())
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
+        bottomNav.setOnItemSelectedListener { item ->
+            val fragment: Fragment = when (item.itemId) {
+                R.id.nav_home -> HomeFragment()
+                R.id.nav_videos -> MediaFragment.newInstance(MediaType.VIDEO)
+                R.id.nav_photos -> MediaFragment.newInstance(MediaType.IMAGE)
+                R.id.nav_favorites -> MediaFragment.newInstanceFavorites()
+                else -> HomeFragment()
+            }
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, fragment)
+                .commit()
+            true
         }
 
         if (savedInstanceState == null) {
-            switchFragment(HomeFragment())
+            bottomNav.selectedItemId = R.id.nav_home
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        MediaRepository.clearCache()
-    }
-
-    private fun switchFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, fragment)
-            .commit()
     }
 
     private fun checkStoragePermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             if (!Environment.isExternalStorageManager()) {
-                Toast.makeText(this, "Please grant All Files Access", Toast.LENGTH_LONG).show()
                 try {
                     val intent = Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
                     intent.data = Uri.parse("package:$packageName")

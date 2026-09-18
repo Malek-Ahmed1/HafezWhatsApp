@@ -6,14 +6,14 @@
         android:title="@string/home" />
     <item
         android:id="@+id/nav_videos"
-        android:icon="@drawable/emoji_videos"
+        android:icon="@drawable/emoji_video"
         android:title="@string/videos" />
     <item
         android:id="@+id/nav_photos"
-        android:icon="@drawable/emoji_photos"
+        android:icon="@drawable/emoji_photo"
         android:title="@string/photos" />
     <item
         android:id="@+id/nav_favorites"
-        android:icon="@drawable/emoji_favorites"
+        android:icon="@drawable/emoji_favorite"
         android:title="@string/favorites" />
 </menu>

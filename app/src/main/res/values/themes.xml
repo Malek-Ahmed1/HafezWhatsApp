@@ -6,10 +6,4 @@
         <item name="colorAccent">@color/accent</item>
         <item name="android:statusBarColor">@color/primary_dark</item>
     </style>
-
-    <!-- Style للأيقونات بدون tint -->
-    <style name="BottomNavNoTint" parent="">
-        <item name="itemIconTint">@null</item>
-        <item name="itemTextColor">@color/primary_dark</item>
-    </style>
 </resources>
