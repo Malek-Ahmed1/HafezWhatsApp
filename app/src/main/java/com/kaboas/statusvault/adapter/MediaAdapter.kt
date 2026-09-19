@@ -12,6 +12,7 @@ import java.io.File
 
 class MediaAdapter(
     private var items: MutableList<File>,
+    private val favorites: MutableSet<String> = mutableSetOf(),
     private val onDownload: (File) -> Unit,
     private val onFavorite: (File) -> Unit,
     private val onDelete: (File) -> Unit,
@@ -20,7 +21,6 @@ class MediaAdapter(
 
     inner class VH(v: View) : RecyclerView.ViewHolder(v) {
         val img: ImageView = v.findViewById(R.id.imgThumb)
-        val playIcon: ImageView = v.findViewById(R.id.imgPlayIcon)
         val btnDownload: ImageButton = v.findViewById(R.id.btnDownload)
         val btnFav: ImageButton = v.findViewById(R.id.btnFavorite)
         val btnDelete: ImageButton = v.findViewById(R.id.btnDelete)
@@ -40,8 +40,10 @@ class MediaAdapter(
             .centerCrop()
             .into(holder.img)
 
-        val isVideo = file.extension.lowercase() in listOf("mp4", "mkv", "3gp", "avi")
-        holder.playIcon.visibility = if (isVideo) View.VISIBLE else View.GONE
+        val isFav = favorites.contains(file.absolutePath)
+        holder.btnFav.setImageResource(
+            if (isFav) R.drawable.emoji_download else R.drawable.heart_empty
+        )
 
         holder.btnDownload.setOnClickListener { onDownload(file) }
         holder.btnFav.setOnClickListener { onFavorite(file) }
@@ -62,5 +64,21 @@ class MediaAdapter(
     fun updateData(newItems: List<File>) {
         items = newItems.toMutableList()
         notifyDataSetChanged()
+    }
+
+    fun setFavorites(newFavs: Set<String>) {
+        favorites.clear()
+        favorites.addAll(newFavs)
+        notifyDataSetChanged()
+    }
+
+    fun toggleFavorite(file: File) {
+        if (favorites.contains(file.absolutePath)) {
+            favorites.remove(file.absolutePath)
+        } else {
+            favorites.add(file.absolutePath)
+        }
+        val index = items.indexOf(file)
+        if (index >= 0) notifyItemChanged(index)
     }
 }

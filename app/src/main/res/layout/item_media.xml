@@ -12,64 +12,51 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <FrameLayout
+        <ImageView
+            android:id="@+id/imgThumb"
             android:layout_width="match_parent"
-            android:layout_height="180dp">
-
-            <ImageView
-                android:id="@+id/imgThumb"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:background="#EEEEEE" />
-
-            <ImageView
-                android:id="@+id/imgPlayIcon"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center"
-                android:src="@android:drawable/ic_media_play"
-                android:background="@drawable/bg_play_circle"
-                android:padding="12dp"
-                android:visibility="gone" />
-        </FrameLayout>
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:background="#EEEEEE" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="4dp"
-            android:gravity="center_vertical">
+            android:gravity="center">
 
             <ImageButton
                 android:id="@+id/btnDownload"
-                android:layout_width="0dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
-                android:layout_height="38dp"
-                android:background="@drawable/bg_download_button"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/emoji_download"
                 android:contentDescription="Download"
-                android:scaleType="centerInside"
-                android:padding="6dp" />
+                android:scaleType="fitCenter"
+                android:padding="4dp" />
 
             <ImageButton
                 android:id="@+id/btnFavorite"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:layout_marginStart="4dp"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/emoji_heart"
+                android:src="@drawable/emoji_favorites"
                 android:contentDescription="Favorite"
+                android:scaleType="fitCenter"
                 android:padding="4dp" />
 
             <ImageButton
                 android:id="@+id/btnDelete"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:layout_marginStart="4dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/emoji_delete"
+                android:src="@drawable/ic_delete_color"
                 android:contentDescription="Delete"
+                android:scaleType="fitCenter"
                 android:padding="4dp" />
 
         </LinearLayout>
