@@ -74,47 +74,42 @@ class HomeFragment : Fragment() {
         r.visibility = View.VISIBLE
         e.visibility = View.GONE
 
-        if (adapter == null) {
-            adapter = MediaAdapter(
-                recent.toMutableList(),
-                favorites = mutableSetOf(),
-                onDownload = { file ->
-                    val type = if (file.extension.lowercase() in listOf("mp4", "mkv", "3gp", "avi"))
-                        MediaType.VIDEO else MediaType.IMAGE
-                    DownloadHelper.downloadFile(requireContext(), file, type)
-                },
-                onFavorite = { file -> toggleFavorite(file) },
-                onDelete = { file ->
-                    if (file.delete()) {
-                        adapter?.removeItem(file)
-                        if (adapter?.itemCount == 0) {
-                            r.visibility = View.GONE
-                            e.visibility = View.VISIBLE
-                        }
-                        Toast.makeText(requireContext(), "🗑️ Deleted", Toast.LENGTH_SHORT).show()
-                    }
-                },
-                onItemClick = { file ->
-                    val intent = Intent(requireContext(), PreviewActivity::class.java)
-                    intent.putExtra("file_path", file.absolutePath)
-                    startActivity(intent)
-                }
-            )
-            r.adapter = adapter
-        } else {
-            adapter?.updateData(recent)
-        }
-
-        // تحديث قائمة المفضلة
-        loadFavoritesForAdapter()
-    }
-
-    private fun loadFavoritesForAdapter() {
+        // نجيب المفضلة أولاً، ثم نبني الأبتر
         lifecycleScope.launch {
             val dao = AppDatabase.getInstance(requireContext()).favoriteDao()
-            dao.getAll().observe(viewLifecycleOwner) { favs ->
-                val paths = favs.map { it.path }.toSet()
+            val favs = dao.getAllList()
+            val paths = favs.map { it.path }.toSet()
+
+            if (adapter == null) {
+                adapter = MediaAdapter(
+                    recent.toMutableList(),
+                    favorites = paths.toMutableSet(),
+                    onDownload = { file ->
+                        val type = if (file.extension.lowercase() in listOf("mp4", "mkv", "3gp", "avi"))
+                            MediaType.VIDEO else MediaType.IMAGE
+                        DownloadHelper.downloadFile(requireContext(), file, type)
+                    },
+                    onFavorite = { file -> toggleFavorite(file) },
+                    onDelete = { file ->
+                        if (file.delete()) {
+                            adapter?.removeItem(file)
+                            if (adapter?.itemCount == 0) {
+                                r.visibility = View.GONE
+                                e.visibility = View.VISIBLE
+                            }
+                            Toast.makeText(requireContext(), "🗑️ Deleted", Toast.LENGTH_SHORT).show()
+                        }
+                    },
+                    onItemClick = { file ->
+                        val intent = Intent(requireContext(), PreviewActivity::class.java)
+                        intent.putExtra("file_path", file.absolutePath)
+                        startActivity(intent)
+                    }
+                )
+                r.adapter = adapter
+            } else {
                 adapter?.setFavorites(paths)
+                adapter?.updateData(recent)
             }
         }
     }
