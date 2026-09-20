@@ -29,6 +29,8 @@ class MediaFragment : Fragment() {
     private var mediaType = MediaType.IMAGE
     private var recycler: RecyclerView? = null
     private var txtEmpty: TextView? = null
+    private var txtCount: TextView? = null
+    private var txtTitle: TextView? = null
 
     companion object {
         private const val ARG_TYPE = "type"
@@ -58,52 +60,46 @@ class MediaFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_media, container, false)
     }
 
-    override fun onResume() {
-        super.onResume()
-        MediaRepository.clearCache()
-        loadMedia()
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         isFavorites = arguments?.getBoolean(ARG_FAVORITES) ?: false
         val typeName = arguments?.getString(ARG_TYPE) ?: MediaType.IMAGE.name
         mediaType = MediaType.valueOf(typeName)
-        loadMedia()
-    }
 
-    private fun loadMedia() {
-        val v = view ?: return
-        val txtTitle = v.findViewById<TextView>(R.id.txtTitle)
-        val txtCount = v.findViewById<TextView>(R.id.txtCount)
-        recycler = v.findViewById(R.id.recyclerMedia)
-        txtEmpty = v.findViewById(R.id.txtEmpty)
+        txtTitle = view.findViewById(R.id.txtTitle)
+        txtCount = view.findViewById(R.id.txtCount)
+        recycler = view.findViewById(R.id.recyclerMedia)
+        txtEmpty = view.findViewById(R.id.txtEmpty)
 
         recycler?.layoutManager = GridLayoutManager(requireContext(), 2)
 
         if (isFavorites) {
-            txtTitle.text = "❤️ Favorites"
+            txtTitle?.text = "❤️ Favorites"
             txtEmpty?.text = "❤️ No favorites yet\nTap the heart on any media"
-            loadFavorites(txtCount)
+            loadFavorites()
         } else {
-            txtTitle.text = if (mediaType == MediaType.VIDEO) "🎬 Videos" else "📸 Photos"
+            txtTitle?.text = if (mediaType == MediaType.VIDEO) "🎬 Videos" else "📸 Photos"
             txtEmpty?.text = if (mediaType == MediaType.VIDEO)
                 "🎬 No videos yet\nOpen WhatsApp to view statuses"
             else "📸 No photos yet\nOpen WhatsApp to view statuses"
-            val files = MediaRepository.listMedia(mediaType)
-            txtCount.text = files.size.toString()
-            showList(files)
+            loadMedia()
         }
     }
 
-    private fun loadFavorites(txtCount: TextView) {
+    private fun loadMedia() {
+        val files = MediaRepository.listMedia(mediaType)
+        txtCount?.text = files.size.toString()
+        showList(files)
+    }
+
+    private fun loadFavorites() {
         val dao = AppDatabase.getInstance(requireContext()).favoriteDao()
         dao.getAll().observe(viewLifecycleOwner) { favs ->
             val files = favs.mapNotNull {
                 val f = File(it.path)
                 if (f.exists()) f else null
             }
-            txtCount.text = files.size.toString()
+            txtCount?.text = files.size.toString()
             showList(files)
         }
     }
@@ -115,6 +111,8 @@ class MediaFragment : Fragment() {
         if (files.isEmpty()) {
             r.visibility = View.GONE
             e.visibility = View.VISIBLE
+            adapter = null
+            r.adapter = null
             return
         }
 
@@ -125,6 +123,7 @@ class MediaFragment : Fragment() {
             adapter = MediaAdapter(
                 files.toMutableList(),
                 favorites = mutableSetOf(),
+                isFavoritesTab = isFavorites,
                 onDownload = { file ->
                     DownloadHelper.downloadFile(requireContext(), file, mediaType)
                 },
@@ -150,11 +149,6 @@ class MediaFragment : Fragment() {
             adapter?.updateData(files)
         }
 
-        // تحديث قائمة المفضلة
-        loadFavoritesForAdapter()
-    }
-
-    private fun loadFavoritesForAdapter() {
         val dao = AppDatabase.getInstance(requireContext()).favoriteDao()
         dao.getAll().observe(viewLifecycleOwner) { favs ->
             val paths = favs.map { it.path }.toSet()
@@ -173,7 +167,6 @@ class MediaFragment : Fragment() {
                 dao.insert(FavoriteEntity(file.absolutePath, file.name, file.extension))
                 Toast.makeText(requireContext(), "❤️ Added", Toast.LENGTH_SHORT).show()
             }
-            adapter?.toggleFavorite(file)
         }
     }
 }

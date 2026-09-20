@@ -13,6 +13,7 @@ import java.io.File
 class MediaAdapter(
     private var items: MutableList<File>,
     private val favorites: MutableSet<String> = mutableSetOf(),
+    private val isFavoritesTab: Boolean = false,
     private val onDownload: (File) -> Unit,
     private val onFavorite: (File) -> Unit,
     private val onDelete: (File) -> Unit,
@@ -41,9 +42,16 @@ class MediaAdapter(
             .into(holder.img)
 
         val isFav = favorites.contains(file.absolutePath)
-        holder.btnFav.setImageResource(
-            if (isFav) R.drawable.favorites else R.drawable.heart_empty
-        )
+
+        // في تاب المفضلة: زر القلب يبقى دايماً ظاهر (للإزالة)
+        // في التابات التانية: زر القلب يظهر بس لو العنصر مش في المفضلة
+        holder.btnFav.visibility = if (isFavoritesTab) {
+            View.VISIBLE
+        } else {
+            if (isFav) View.GONE else View.VISIBLE
+        }
+
+        holder.btnFav.setImageResource(R.drawable.heart_empty)
 
         holder.btnDownload.setOnClickListener { onDownload(file) }
         holder.btnFav.setOnClickListener { onFavorite(file) }

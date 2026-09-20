@@ -39,12 +39,12 @@
 
             <ImageButton
                 android:id="@+id/btnFavorite"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/emoji_favorites"
-                android:contentDescription="Favorite"
+                android:src="@drawable/heart_empty"
+                android:contentDescription="Add to favorites"
                 android:scaleType="fitCenter"
                 android:padding="4dp" />
 

@@ -35,12 +35,6 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
-    override fun onResume() {
-        super.onResume()
-        MediaRepository.clearCache()
-        loadRecent()
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -74,43 +68,42 @@ class HomeFragment : Fragment() {
         r.visibility = View.VISIBLE
         e.visibility = View.GONE
 
-        // نجيب المفضلة أولاً، ثم نبني الأبتر
-        lifecycleScope.launch {
-            val dao = AppDatabase.getInstance(requireContext()).favoriteDao()
-            val favs = dao.getAllList()
-            val paths = favs.map { it.path }.toSet()
-
-            if (adapter == null) {
-                adapter = MediaAdapter(
-                    recent.toMutableList(),
-                    favorites = paths.toMutableSet(),
-                    onDownload = { file ->
-                        val type = if (file.extension.lowercase() in listOf("mp4", "mkv", "3gp", "avi"))
-                            MediaType.VIDEO else MediaType.IMAGE
-                        DownloadHelper.downloadFile(requireContext(), file, type)
-                    },
-                    onFavorite = { file -> toggleFavorite(file) },
-                    onDelete = { file ->
-                        if (file.delete()) {
-                            adapter?.removeItem(file)
-                            if (adapter?.itemCount == 0) {
-                                r.visibility = View.GONE
-                                e.visibility = View.VISIBLE
-                            }
-                            Toast.makeText(requireContext(), "🗑️ Deleted", Toast.LENGTH_SHORT).show()
+        if (adapter == null) {
+            adapter = MediaAdapter(
+                recent.toMutableList(),
+                favorites = mutableSetOf(),
+                isFavoritesTab = false,
+                onDownload = { file ->
+                    val type = if (file.extension.lowercase() in listOf("mp4", "mkv", "3gp", "avi"))
+                        MediaType.VIDEO else MediaType.IMAGE
+                    DownloadHelper.downloadFile(requireContext(), file, type)
+                },
+                onFavorite = { file -> toggleFavorite(file) },
+                onDelete = { file ->
+                    if (file.delete()) {
+                        adapter?.removeItem(file)
+                        if (adapter?.itemCount == 0) {
+                            r.visibility = View.GONE
+                            e.visibility = View.VISIBLE
                         }
-                    },
-                    onItemClick = { file ->
-                        val intent = Intent(requireContext(), PreviewActivity::class.java)
-                        intent.putExtra("file_path", file.absolutePath)
-                        startActivity(intent)
+                        Toast.makeText(requireContext(), "🗑️ Deleted", Toast.LENGTH_SHORT).show()
                     }
-                )
-                r.adapter = adapter
-            } else {
-                adapter?.setFavorites(paths)
-                adapter?.updateData(recent)
-            }
+                },
+                onItemClick = { file ->
+                    val intent = Intent(requireContext(), PreviewActivity::class.java)
+                    intent.putExtra("file_path", file.absolutePath)
+                    startActivity(intent)
+                }
+            )
+            r.adapter = adapter
+        } else {
+            adapter?.updateData(recent)
+        }
+
+        val dao = AppDatabase.getInstance(requireContext()).favoriteDao()
+        dao.getAll().observe(viewLifecycleOwner) { favs ->
+            val paths = favs.map { it.path }.toSet()
+            adapter?.setFavorites(paths)
         }
     }
 
@@ -125,7 +118,6 @@ class HomeFragment : Fragment() {
                 dao.insert(FavoriteEntity(file.absolutePath, file.name, file.extension))
                 Toast.makeText(requireContext(), "❤️ Added", Toast.LENGTH_SHORT).show()
             }
-            adapter?.toggleFavorite(file)
         }
     }
 }
