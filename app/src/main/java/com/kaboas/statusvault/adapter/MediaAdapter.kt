@@ -42,7 +42,7 @@ class MediaAdapter(
 
         val isFav = favorites.contains(file.absolutePath)
         holder.btnFav.setImageResource(
-            if (isFav) R.drawable.emoji_favorites else R.drawable.heart_empty
+            if (isFav) R.drawable.favorites else R.drawable.heart_empty
         )
 
         holder.btnDownload.setOnClickListener { onDownload(file) }
