@@ -43,15 +43,15 @@ class MediaAdapter(
 
         val isFav = favorites.contains(file.absolutePath)
 
-        // في تاب المفضلة: زر القلب يبقى دايماً ظاهر (للإزالة)
-        // في التابات التانية: زر القلب يظهر بس لو العنصر مش في المفضلة
-        holder.btnFav.visibility = if (isFavoritesTab) {
-            View.VISIBLE
+        if (isFavoritesTab) {
+            // في تاب المفضلة: الزر دايماً ظاهر — بيستخدم love.png للإزالة
+            holder.btnFav.visibility = View.VISIBLE
+            holder.btnFav.setImageResource(R.drawable.love)
         } else {
-            if (isFav) View.GONE else View.VISIBLE
+            // في التابات التانية: الزر يظهر بس لو مش في المفضلة — بيستخدم heart_empty.png
+            holder.btnFav.visibility = if (isFav) View.GONE else View.VISIBLE
+            holder.btnFav.setImageResource(R.drawable.heart_empty)
         }
-
-        holder.btnFav.setImageResource(R.drawable.heart_empty)
 
         holder.btnDownload.setOnClickListener { onDownload(file) }
         holder.btnFav.setOnClickListener { onFavorite(file) }
