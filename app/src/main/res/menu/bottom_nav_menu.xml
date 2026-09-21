@@ -12,8 +12,4 @@
         android:id="@+id/nav_photos"
         android:icon="@drawable/emoji_photos"
         android:title="@string/photos" />
-    <item
-        android:id="@+id/nav_favorites"
-        android:icon="@drawable/bottom_love"
-        android:title="@string/favorites" />
 </menu>
