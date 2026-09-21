@@ -46,7 +46,7 @@ class MediaAdapter(
         if (isFavoritesTab) {
             // في تاب المفضلة: الزر دايماً ظاهر — بيستخدم love.png للإزالة
             holder.btnFav.visibility = View.VISIBLE
-            holder.btnFav.setImageResource(R.drawable.love)
+            holder.btnFav.setImageResource(R.drawable.bottom_love)
         } else {
             // في التابات التانية: الزر يظهر بس لو مش في المفضلة — بيستخدم heart_empty.png
             holder.btnFav.visibility = if (isFav) View.GONE else View.VISIBLE
